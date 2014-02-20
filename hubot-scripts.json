@@ -2,13 +2,5 @@
   "alot.coffee",
   "bitcoin.coffee",
   "catfacts.coffee",
-  "google-images.coffee",
-  "help.coffee",
-  "maps.coffee",
-  "ping.coffee",
-  "pugme.coffee",
-  "rules.coffee",
-  "shipit.coffee",
-  "translate.coffee",
-  "youtube.coffee"
+  "shipit.coffee"
 ]
