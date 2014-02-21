@@ -12,16 +12,9 @@
 
 module.exports = (robot) ->
 
-  robot.respond /WillCall event (.*)/i, (msg) ->
+  robot.hear /event (.{24})/i, (msg) ->
     msg.http("https://api.getwillcall.com/api/events/#{ msg.match[1]}")
       .get() (err, res, body) ->
-        msg.send "#{JSON.parse(body).name}"
-        msg.send "#{JSON.parse(body).time_to_start} at #{JSON.parse(body).venue_name}"
-        msg.send "#{JSON.parse(body).images.thumbnail}"
-        
-  robot.respond /event (.*)/i, (msg) ->
-    msg.http("https://api.getwillcall.com/api/events/#{ msg.match[1]}")
-      .get() (err, res, body) ->
-        msg.send "#{JSON.parse(body).name}"
-        msg.send "#{JSON.parse(body).time_to_start} at #{JSON.parse(body).venue_name}"
-        msg.send "#{JSON.parse(body).images.thumbnail}"
+        msg.send "#{JSON.parse(body).name}",
+                 "#{JSON.parse(body).time_to_start} at #{JSON.parse(body).venue_name}",
+                 "#{JSON.parse(body).images.thumbnail}"
