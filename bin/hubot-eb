@@ -1,5 +1,5 @@
 #!/bin/sh
 
-export PATH="node_modules/.bin:node_modules/hubot/bin:$PATH"
+export PATH="node_modules/.bin:node_modules/hubot/.bin:node_modules/hubot/bin:$PATH"
 echo $PATH
 hubot "$@"
